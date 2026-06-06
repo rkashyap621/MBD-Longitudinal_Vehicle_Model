@@ -167,7 +167,7 @@ Though the baseline is abe to successfully compute the vehicle velocity, it need
 
 In this model, each resting force subsystems were refactored as masked subsystem. The refactored model is shown below.
 
-![Base Line Mode2-MDL2](https://i.postimg.cc/6qgrxW7M/Model2.png)
+![Model2-MDL2](https://i.postimg.cc/6qgrxW7M/Model2.png)
 
 The implemented refactored version model is available in the folder **'models/'** with the file name **'MDL2_Longitudinal_Vehicle_Model_Mask.slx'** in this repository.
 
@@ -181,7 +181,7 @@ This refactored model was able to help me simplify the simulation parameter m-sc
 
 ![New m-script](https://i.postimg.cc/Hk32vgYM/Init-Fcn-new.png)
 
-Both the m-scripts are available in the **'scripts/'** folder.
+Both the m-scripts are available in the **'scripts/'** folder in this repository.
 
 All the remaining simulation paramters were promoted and exposed in the subsystem masks of each resistive force as shown below.
 
@@ -207,7 +207,25 @@ This refactored subsystem was able to maintain consistent simulation results exa
 ![Model 2 Scope Result](https://i.postimg.cc/7hf3RGLK/Model2-Simulation-Result.png)
 
 ### MODEL-3: Longitudinal Vehicle Model with Reusable Subsystem Masks for each Resistive Force from Custom Simulink Library
-Though the subsystems were
+Though the subsystems were able to help me improve my **InitFcn m-script**, promte and expose the simulation parmeters into subsystem masks, and maintain consistent simulation result, still the subsystems were unprotected from unintentional and accidental modifictaions. This refactored model aimed to add protection to the masked subsystems so that it can be safely reused with protection against accidental modifications by ohers.
+
+In order to achieve this I moved all the masked subsystems into a custom simulink library and locked the links to the blocks in the library as shown below.
+
+![Opposing Forces Lib](https://i.postimg.cc/Dw5gpTvB/Opposing-Forces-Lib.png)
+
+This library file is accessible is **'library/'** folder in this repository.
+
+To know more about lock links, [Click Here](https://in.mathworks.com/help/releases/R2025b/simulink/ug/lock-links-to-library.html)
+
+Once the locked library was created I replaced the older editable masked subsystems with the reusable and locked and linked masked subsystem blocks from the library for each resisting forces as shown below.
+
+![Model3-MDL3](https://i.postimg.cc/Zn28zbBz/Model3.png)
+
+Since we didn't do any computational modifications, after simulation the simulation results remaind consistent and exact in this refactored version model as well as shown below.
+
+![Model 3 Final_Velocity](https://i.postimg.cc/CLG8NBbK/Model3-Final-Velocit.png)
+
+![Model 3 Scope Result](https://i.postimg.cc/CLG8NBbK/Model3-Final-Velocit.png)
 
 ## Learning Outcomes
 
