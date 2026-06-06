@@ -138,7 +138,7 @@ In this project, I began with the implementation of baseine model which represen
 
 ![Base Line Model-MDL1](https://i.postimg.cc/QCwQZ8Bm/Model1.png)
 
-The implemented baseline model is available in the folder **'models/'** with the file name **'MDL1_Longitudinal_Vehicle_Model.slx'**.
+The implemented baseline model is available in the folder **'models/'** with the file name **'MDL1_Longitudinal_Vehicle_Model.slx'** in this repository.
 
 ## Model Parameters
 The following are the model parameters that were used for simulationnn:
@@ -168,6 +168,8 @@ Though the baseline is abe to successfully compute the vehicle velocity, it need
 In this model, each resting force subsystems were refactored as masked subsystem. The refactored model is shown below.
 
 ![Base Line Mode2-MDL2](https://i.postimg.cc/6qgrxW7M/Model2.png)
+
+The implemented refactored version model is available in the folder **'models/'** with the file name **'MDL2_Longitudinal_Vehicle_Model_Mask.slx'** in this repository.
 
 This refactored model was able to help me simplify the simulation parameter m-script. For, better comparrsion I am displaying the older and current m-scripts below.
 
