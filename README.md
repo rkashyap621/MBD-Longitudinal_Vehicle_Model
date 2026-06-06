@@ -151,6 +151,8 @@ The following are the model parameters that were used for simulationnn:
  * A = 2.2 m² (Vehicle Frontal Area)
  * theta = 0 rad (Road Slope Area)
 
+All the above listed simlulation parameters were define in m-script, and the m-script was used as **'initialization funtion'** within Simulink.
+
 ## Simulation Result
 After performing model simulation, I observed the final velocity to computed appoximately 159 km/h by the baseline model.
 
@@ -158,6 +160,8 @@ After performing model simulation, I observed the final velocity to computed app
 ![Model_1_Scope_Result](https://i.postimg.cc/yxtmC1JF/Model1-Simulation-Result.png)
 
 ## Refactored Masked Subsystem Version
+### MODEL-2: Longitudinal Vehicle Model with Subsystem Masks for each Resistive Force
+
 ## Learning Outcomes
 
 ## Future Improvements
