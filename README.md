@@ -163,6 +163,24 @@ After performing model simulation, I observed the final velocity to be computed 
 
 ## Refactored Masked Subsystem Version
 ### MODEL-2: Longitudinal Vehicle Model with Subsystem Masks for each Resistive Force
+Though the baseline is abe to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect it needed improvements are the global declaration of simulation parameters in m-script as **'initialization function'**.
+
+In this model, each resting force subsystems were refactored as masked subsystem.
+
+Rolling Resistance Force block:
+![Rolling Resistance](https://i.postimg.cc/Bv6CdVbT/Rolling-Resistance.png)
+
+![Rolling Resistance Subsystem Mask](https://i.postimg.cc/K8QNp2G9/Rolling-Resistance-Mask-Diag.png)
+
+Road Grade Force block:
+![Road Grade](https://i.postimg.cc/bwLTVhyL/Road-Grade-Force-Masked-Subsystem.png)
+
+![Road Grade Subsystem Block](https://i.postimg.cc/SxVr1hSr/Road-Grade-Force-Mask-Diag.png)
+
+Aerodynamic Drag Force block:
+![Aerdynamic Drag Force](https://i.postimg.cc/3x9BfT8p/Aerodynamic-Drag-Masked-Subsystem.png)
+
+![Aerodynamic Drag Subsystem Mask](https://i.postimg.cc/0yZfXskw/Aerodynamic-Drag-Mask-Diag.png)
 
 ## Learning Outcomes
 
