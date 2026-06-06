@@ -149,9 +149,10 @@ The following are the model parameters that were used for simulationnn:
  * rho = 1.225 kg/m³ (Air Density)
  * C_d = 0.32 (Drag Coefficient)
  * A = 2.2 m² (Vehicle Frontal Area)
- * theta = 0 rad (Road slope Area)
+ * theta = 0 rad (Road Slope Area)
 
 ## Simulation Result
+After performing model simulation, I observed the final velocity to computed appoximately 159 km/h by the baseline model.
 
 ## Refactored Masked Subsystem Version
 ## Learning Outcomes
