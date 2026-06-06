@@ -4,6 +4,8 @@
 
 The objective of this project is to model the longitudinal velocity of a vehicle using Newton's Second Law and implement the equation in Simulink. The model considers traction force and major opposing forces such as rolling resistance, aerodynamic drag, and road grade force.
 
+---
+
 ## Basic Equation
 A basic equation for modeling vehicle velocity comes from applying Newton's Second Law of Motion to the longitudinal motion of the vehicle.
 The general longitudinal vehicle dynamics equation is:
