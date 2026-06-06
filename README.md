@@ -200,7 +200,14 @@ All the remaining simulation paramters were promoted and exposed in the subsyste
 
 ![Aerodynamic Drag Subsystem Mask](https://i.postimg.cc/0yZfXskw/Aerodynamic-Drag-Mask-Diag.png)
 
+This refactored subsystem was able to maintain consistent simulation results exactly matching with baseline model even after refactoring as shown below.
+
+![Model_2_Final_Velocity](https://i.postimg.cc/5NBz3Y80/Model2-Final-velocity.png)
+
+![Model 2 Scope Result](https://i.postimg.cc/7hf3RGLK/Model2-Simulation-Result.png)
+
 ### MODEL-3: Longitudinal Vehicle Model with Reusable Subsystem Masks for each Resistive Force from Custom Simulink Library
+Though the subsystems were
 
 ## Learning Outcomes
 
