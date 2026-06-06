@@ -136,7 +136,7 @@ $\large {\frac {dv} {dt} = \frac{1} {m} [F_T - C_rmg - \frac {1} {2} \rho C_d A 
 ### MODEL-1: Longitudinal Vehicle Model (Baseline Model)
 In this project, I began by implementing a baseline model representing the longitudinal vehicle dynamics model. The baseline model was implemented by computing each resisting force separately, summing the opposing forces, subtracting them from the input traction force, dividing by vehicle mass to get the acceleration, integrating to obtain velocity, and converting the velocity result from m/s to km/h. The implemented Simulink model is shown below.
 
-![Base Line Model-MDL1](https://i.postimg.cc/QCwQZ8Bm/Model1.png)
+![Base Line Model - MDL1](https://i.postimg.cc/QCwQZ8Bm/Model1.png)
 
 The implemented baseline model is available in the folder **'models/'** with the file name **'MDL1_Longitudinal_Vehicle_Model.slx'** in this repository.
 
@@ -152,7 +152,7 @@ The following are the model parameters that were used for simulation:
  * theta = 0 rad (Road Slope Angle)
  * v = 20 m/s (Vehicle Velocity Relative to Air)
 
-All the above listed simulation parameters were defined in m-script, and the m-script was used as **'initialization function'** within Simulink.
+All the above listed simulation parameters were defined in m-script, and the MATLAB script was used as **'initialization function'** within Simulink.
 
 ## Simulation Result
 After performing model simulation, I observed the final velocity to be computed approximately around 159 km/h by the baseline model.
@@ -233,6 +233,7 @@ By implementing this project, I gained practical exposure to the following impor
  * Creating masked subsystems
  * Parameter promotion
  * Creating reusable library blocks
+ * Refactoring models while preserving simulation behavior
 
 ## Future Improvements
 As per standard MBD workflow, the following are the important next steps:
