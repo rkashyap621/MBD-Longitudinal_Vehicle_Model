@@ -150,6 +150,7 @@ The following are the model parameters that were used for simulationnn:
  * C_d = 0.32 (Drag Coefficient)
  * A = 2.2 m² (Vehicle Frontal Area)
  * theta = 0 rad (Road Slope Area)
+ * v = 20 m/s (Vehicle Velocity Relative to Air)
 
 All the above listed simulation parameters were defined in m-script, and the m-script was used as **'initialization funtion'** within Simulink.
 
