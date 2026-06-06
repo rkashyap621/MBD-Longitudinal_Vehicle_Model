@@ -19,6 +19,8 @@ Where,
   * $\large F_T$ = traction (or driving) force from wheels/engine ($\large N$)  
   * $\large F_R$ = total opposing forces ($\large N$)
 
+---
+
 ## Expanded Vehicle Velocity Model
 The opposing (or resistive) forces are usually modeled as:
 
@@ -39,6 +41,8 @@ Where,
   * $\large F_g$ = grade force ($\large N$)
 
 For this model, rolling resistance, aerodynamic drag, and positive road grade are treated as opposing forces to the vehicle motion.
+
+---
 
 ## Individual Force Equations
 1. Rolling Resistance
@@ -69,6 +73,8 @@ Where,
 Typical:
 * $\large C_r \approx$ 0.01 to 0.02
 
+---
+
 ### 2. Aerodynamic Drag
 Aerodynamic drag is the force exerted by air that opposes the motion of a moving vehicle.
 
@@ -98,6 +104,8 @@ Where,
    * Smooth underbody
    * Active grille shutters
    * Aerodynamic wheel designs
+  
+ ---
  
 ### 3. Road Grade Force (or Hill Force)
 Road grade force (or hill force) is the component of gravity acting along the slope of the road.
@@ -126,6 +134,8 @@ Where,
  * Regenerative braking 
  * Cruise control
 
+---
+
 ## Final Differential Equation
 
 $\large {m \frac {dv} {dt} = F_T - (C_rmg + \frac {1} {2} \rho C_d A v^2 + m g \sin(\theta))}$
@@ -133,6 +143,8 @@ $\large {m \frac {dv} {dt} = F_T - (C_rmg + \frac {1} {2} \rho C_d A v^2 + m g \
 Or:
 
 $\large {\frac {dv} {dt} = \frac{1} {m} [F_T - C_rmg - \frac {1} {2} \rho C_d A v^2 - m g \sin(\theta)]}$
+
+---
 
 ## Simulink Implementation
 ### MODEL-1: Longitudinal Vehicle Model (Baseline Model)
@@ -156,12 +168,16 @@ The following are the model parameters that were used for simulation:
 
 All the above listed simulation parameters were defined in m-script, and the MATLAB script was used as **'initialization function'** within Simulink.
 
+---
+
 ## Simulation Result
 After performing model simulation, I observed the final velocity to be computed approximately around 159 km/h by the baseline model.
 
 ![Model_1_Final_Velocity](https://i.postimg.cc/BQTFgL2n/Model1-Final-Velocity.png)
 
 ![Model_1_Scope_Result](https://i.postimg.cc/yxtmC1JF/Model1-Simulation-Result.png)
+
+---
 
 ## Refactored Masked Subsystem Version
 ### MODEL-2: Longitudinal Vehicle Model with Subsystem Masks for each Resistive Force
@@ -208,6 +224,8 @@ This refactored subsystem was able to maintain consistent simulation results exa
 
 ![Model 2 Scope Result](https://i.postimg.cc/7hf3RGLK/Model2-Simulation-Result.png)
 
+---
+
 ### MODEL-3: Longitudinal Vehicle Model with Reusable Subsystem Masks for each Resistive Force from Custom Simulink Library
 Although the masked subsystems helped simplify the InitFcn m-script, expose simulation parameters through subsystem masks, and maintain consistent simulation results, the subsystems were still directly editable inside the model. To improve reusability and reduce accidental modifications, I moved the masked force components into a custom Simulink library and used locked linked library blocks in the main model.
 
@@ -227,6 +245,8 @@ Since no computational modifications were made, the simulation results remained 
 
 ![Model 3 Scope Result](https://i.postimg.cc/02ZkPDm1/Model3-Simulation-Result.png)
 
+---
+
 ## Learning Outcomes
 By implementing this project, I gained practical exposure to the following important MBD aspects:
  * Translating physics into Simulink
@@ -236,6 +256,8 @@ By implementing this project, I gained practical exposure to the following impor
  * Parameter promotion
  * Creating reusable library blocks
  * Refactoring models while preserving simulation behavior
+
+---
 
 ## Future Improvements
 As per standard MBD workflow, the following are the important next steps:
