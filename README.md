@@ -134,7 +134,7 @@ $\large {\frac {dv} {dt} = \frac{1} {m} [F_T - C_rmg - \frac {1} {2} \rho C_d A 
 
 ## Simulink Implementation
 ### MODEL-1: Longitudinal Vehicle Model (Baseline Model)
-In this project, I began with the implementation of baseline model which represents longitudinal vehicle model. The baseline model was implemented by computing each resisting force separately, summing the opposing forces, subtracting them from the input traction force, dividing by vehicle mass to get the acceleration, integrating to obtain velocity, and converting the velocity result from m/s to km/h. The implemented Simulink model is shown below.
+In this project, I began by implementing implementation a baseline model representing longitudinal vehicle model. The baseline model was implemented by computing each resisting force separately, summing the opposing forces, subtracting them from the input traction force, dividing by vehicle mass to get the acceleration, integrating to obtain velocity, and converting the velocity result from m/s to km/h. The implemented Simulink model is shown below.
 
 ![Base Line Model-MDL1](https://i.postimg.cc/QCwQZ8Bm/Model1.png)
 
@@ -163,15 +163,15 @@ After performing model simulation, I observed the final velocity to be computed 
 
 ## Refactored Masked Subsystem Version
 ### MODEL-2: Longitudinal Vehicle Model with Subsystem Masks for each Resistive Force
-Though the baseline is able to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect it needed improvement was the global declaration of simulation parameters in m-script as **'initialization function'**.
+Though the baseline is able to successfully compute the vehicle velocity, it needed further modeling improvements. The first aspect I wanted to improve was the global declaration of simulation parameters in m-script as **'initialization function'**.
 
-In this model, each resting force subsystem were refactored as a masked subsystem. The refactored model is shown below.
+In this model, each resisting force subsystem were refactored as a masked subsystem. The refactored model is shown below.
 
 ![Model2-MDL2](https://i.postimg.cc/6qgrxW7M/Model2.png)
 
 The implemented refactored version model is available in the folder **'models/'** with the file name **'MDL2_Longitudinal_Vehicle_Model_Mask.slx'** in this repository.
 
-This refactored model was able to help me simplify the simulation parameter m-script. For better comparrsion I am displaying the older and current m-scripts below.
+This refactored model was able to help me simplify the simulation parameter m-script. For better comparsion I am displaying the older and current m-scripts below.
 
 **Old Init Fcn m-script:**
 
@@ -207,13 +207,11 @@ This refactored subsystem was able to maintain consistent simulation results exa
 ![Model 2 Scope Result](https://i.postimg.cc/7hf3RGLK/Model2-Simulation-Result.png)
 
 ### MODEL-3: Longitudinal Vehicle Model with Reusable Subsystem Masks for each Resistive Force from Custom Simulink Library
-Though the subsystems were able to help me improve my **InitFcn m-script**, promote and expose the simulation parameters into subsystem masks, and maintain consistent simulation result, still the subsystems were unprotected from unintentional and accidental modifications. This refactored model aimed to add protection to the masked subsystems so that it can be safely reused with protection against accidental modifications by others.
-
-In order to achieve this I moved all the masked subsystems into a custom Simulink library and locked the links to the blocks in the library as shown below.
+Although the masked subsystems helped simplify the InitFcn m-script, expose simulation parameters through subsystem masks, and maintain consistent simulation results, the subsystems were still directly editable inside the model. To improve reusability and reduce accidental modifications, I moved the masked force components into a custom Simulink library and used locked linked library blocks in the main model.
 
 ![Opposing Forces Lib](https://i.postimg.cc/Dw5gpTvB/Opposing-Forces-Lib.png)
 
-This library file is available in **'library/'** folder in this repository.
+This library file is available in **'libraries/'** folder in this repository.
 
 To know more about lock links functionality in Simulink library, [Click Here](https://in.mathworks.com/help/releases/R2025b/simulink/ug/lock-links-to-library.html)
 
