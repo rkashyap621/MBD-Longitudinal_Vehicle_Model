@@ -166,7 +166,7 @@ The following are the model parameters that were used for simulation:
  * theta = 0 rad (Road Slope Angle)
  * v = 20 m/s (Vehicle Velocity Relative to Air)
 
-All the above listed simulation parameters were defined in m-script, and the MATLAB script was used as **'initialization function'** within Simulink.
+All the above listed simulation parameters were defined in MATLAB script, and the MATLAB script was used as **'initialization function'** within Simulink.
 
 ---
 
