@@ -239,6 +239,8 @@ Once the locked library was created, I replaced the older editable masked subsys
 
 ![Model3-MDL3](https://i.postimg.cc/Zn28zbBz/Model3.png)
 
+The implemented refactored version model is available in the folder **'models/'** with the file name **'MDL3_Longitudinal_Vehicle_Model_Lib_Mask.slx'** in this repository.
+
 Since no computational modifications were made, the simulation results remained consistent with the previous model versions, as shown below.
 
 ![Model 3 Final_Velocity](https://i.postimg.cc/CLG8NBbK/Model3-Final-Velocit.png)
